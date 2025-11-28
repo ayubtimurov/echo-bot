@@ -1,9 +1,13 @@
 from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
 
 TOKEN: Final = '8586145288:AAEkQ-DDrPo5ecYlM5Wc5uUVMdlya0D2V2Y'
-BOT_USERNAME: Final= '@EchoDIIbot'
 
 # Commands
 
@@ -27,13 +31,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     print(f"User ({update.message.chat.id}) in {message_type}: '{text}'")
 
-    # if message_type == 'group':
-    #     if BOT_USERNAME in text:
-    #         new_text: str = text.replace(BOT_USERNAME, '').strip()
-    #         response: str = handle_response(new_text)
-    #     else:
-    #         return
-    # else:
     response: str = handle_response(text)
 
     print("Bot:", response)
