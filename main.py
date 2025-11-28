@@ -2,12 +2,13 @@ from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
 
 
-TOKEN: Final = '8586145288:AAEkQ-DDrPo5ecYlM5Wc5uUVMdlya0D2V2Y'
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 # Commands
 
